@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Photo{% endblock %}
+
+{% block content %}
+	<div class="w3-row">
+  	<form class="w3-padding w3-col w3-third w3-card w3-round" method="post" enctype="multipart/form-data" style="width:100">
+    	<h1 class="w3-text-blue">Add a Photo</h1>
+			{% csrf_token %}
+    	{{ form.as_p }}
+    	<button type="submit" class="w3-right w3-round w3-bar w3-button w3-blue">Submit</button>
+  	</form>
+	</div>
+{% endblock %}
+

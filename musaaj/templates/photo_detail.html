@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{{photo.title}}{% endblock %}
+
+{% block content %}
+	<div class="w3-display w3-padding-64 w3-container">
+		<div class="w3-card w3-display-middle w3-padding" stle="max-width:400px">
+			<div class="w3-center">
+				<h1 class="w3-text-blue">{{photo.title}}</h1>
+				<img src="{{photo.picture.url}}" class="w3-image">
+			</div>
+			<div class="w3-container">
+				{{photo.description}}
+			</div>
+			<hr/>
+			<div class="w3-row">
+				<a class="w3-btn w3-col l1 m1 s1 w3-left fa fa-thumbs-up w3-padding w3-text-indigo" href="{{photo.picture.ulr}}" target="blank"></a>
+				<a class="w3-btn w3-col l1 m1 s1 fa fa-love w3-padding w3-text-green" href="{{photo.picture.ulr}}" target="blank"></a>
+				<a class="w3-btn w3-col l1 m1 s1 fa fa-heart w3-padding w3-text-red" href="{{photo.picture.ulr}}" target="blank"></a>
+				<a class="w3-btn w3-col l1 m1 s1 w3-right fa fa-share w3-padding w3-text-blue" href="{{photo.picture.ulr}}" target="blank"></a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

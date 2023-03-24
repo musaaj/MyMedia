@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Photos{% endblock %}
+
+{% block content %}
+	<div class="w3-row w3-center">
+		{% for photo in photos %}
+			<div class="w3-card w3-margin w3-col l2" style="height:300px; width:300px">
+				<h2 class="w3-text-blue">{{ photo.title }}</h2>
+				<a class="w3-btn" href="{% url 'photo' pk=photo.id %}">
+					<img src="{{photo.picture.url}}" class="w3-image w3-mobile" style="height:90px">
+				</a>
+				<p style="height:40px;overflow:hidden">{{ photo.description }}</p>
+				<hr/>
+				<div clas="w3-content" >
+					<span class="fa fa-thumbs-down w3-padding w3-left w3-hover-text-gray w3-text-red"></span>
+					<span class="fa fa-thumbs-up w3-right w3-padding w3-hover-text-gray w3-text-blue"></span>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
+
