@@ -1,9 +1,13 @@
-from django.views.generic import ListView, DetailView, FormView
+from django.views.generic import ListView, DetailView, FormView, TemplateView
 from .models import PhotoModel
 from .forms import PhotoForm
 from django.urls import reverse_lazy
 import os
 from MyMedia import settings
+
+class HomeView(TemplateView):
+    template_name = 'base.html'
+
 
 class PhotoDetailView(DetailView):
     model = PhotoModel
