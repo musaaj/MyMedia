@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Videos{% endblock %}
+
+{% block content %}
+	<div class="w3-row w3-center">
+		{% for video in videos %}
+			<div class="w3-card w3-margin w3-col l2" style="height:300px; width:300px">
+				<video class="w3-container" controls style="width:100%; height:200px">
+					<source src="{{video.video.url}}" type="video/mp4"></source>
+				</video>
+				<h2 class="w3-text-blue w3-small">{{ video.title }}</h2>
+				<p class="w3-container" style="height:30px;overflow:hidden">{{ video.description }}</p>
+				<hr/>
+				<div clas="w3-content" >
+					<span class="fa fa-thumbs-down w3-padding w3-left w3-hover-text-gray w3-text-red"></span>
+					<span class="fa fa-thumbs-up w3-right w3-padding w3-hover-text-gray w3-text-blue"></span>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
+

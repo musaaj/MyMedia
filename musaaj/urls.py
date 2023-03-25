@@ -1,13 +1,24 @@
 from django.urls import path
-from .views import PhotoFormView, PhotoListView, PhotoDetailView, HomeView
+from .views import(
+        PhotoFormView,
+        PhotoListView,
+        PhotoDetailView,
+        HomeView,
+        VideoFormView,
+        VideoListView,
+        AudioFormView
+)
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('',HomeView.as_view(), name='home'),
-    path('add/', PhotoFormView.as_view(), name='photo-add'),
+    path('add_photo/', PhotoFormView.as_view(), name='add_photo'),
     path('photos/', PhotoListView.as_view(), name='photos'),
-    path('photo/<int:pk>/', PhotoDetailView.as_view(), name='photo')
+    path('photo/<int:pk>/', PhotoDetailView.as_view(), name='photo'),
+    path('add_video/', VideoFormView.as_view(), name='add_video'),
+    path('videos/', VideoListView.as_view(), name='videos'),
+    path('add_audio/', AudioFormView.as_view(), name='add_audio')
 ]
 
 if settings.DEBUG:

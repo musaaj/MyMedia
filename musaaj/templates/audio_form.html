@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block title %}
+	Add Audio
+{% endblock title %}
+
+{% block content %}
+	<div class="w3-card w3-padding w3-margin w3-round" style="max-width: 400px;">
+		<h1 class="w3-text-blue">Add Audio</h1>
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button class="w3-bar w3-button w3-blue" type="submit">Submit</button>
+		</form>
+	</div>
+{% endblock content %}
