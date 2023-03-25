@@ -20,7 +20,5 @@ urlpatterns = [
     path('videos/', VideoListView.as_view(), name='videos'),
     path('add_audio/', AudioFormView.as_view(), name='add_audio')
 ]
-
-if settings.DEBUG:
-        urlpatterns += static(settings.MEDIA_URL,
+urlpatterns += static(settings.MEDIA_URL,
                               document_root=settings.MEDIA_ROOT)
