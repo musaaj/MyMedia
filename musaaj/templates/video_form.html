@@ -1,15 +1,21 @@
 {% extends 'base.html'%}
-	Add Video
+{% load static %}
+
 {% block title %}
+	Add Video
 {% endblock title %}
 
+{% block css %}
+	<link rel="stylesheet" href="{% static 'custom_style.css' %}">
+{% endblock css %}
+
 {% block content %}
-	<div class="w3-card w3-padding w3-margin w3-round" style="max-width: 400px;">
-		<h1 class="w3-text-blue">Add Video</h1>
-		<form method="post" enctype="multipart/form-data">
+	<div class="row w3-padding-64">
+		<form class="w3-card w3-padding w3-round" method="post" enctype="multipart/form-data">
+			<h1 class="w3-text-blue">Add Video</h1>
 			{% csrf_token %}
 			{{form.as_p}}
-			<button class="w3-bar w3-button w3-blue" type="submit">Submit</button>
+			<button class="w3-bar w3-button w3-round w3-blue" type="submit">Submit</button>
 		</form>
 	</div>
 {% endblock content %}

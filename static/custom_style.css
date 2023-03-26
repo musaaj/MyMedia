@@ -16,9 +16,21 @@
 }
 .image{
 	width:200px;
-	height: 200px;
+	display:block;
+	height:200px;
 }
 .audio{
   width:100px;
 	height:100px;
+}
+
+@media only screen and (max-width: 600px){
+	.row-items{
+		width:100%;
+	}
+	.image{
+		display: block;
+		width: 100%;
+		height: 200px;
+	}
 }
