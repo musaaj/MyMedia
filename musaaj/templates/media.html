@@ -24,7 +24,7 @@ MyMedia
 				<div class="w3-card">
 					<img src="{{photo.picture.url}}" class="image">
 					<hr/>
-					<p class="w3-padding w3-container" style="height:20px; overflow:hidden;">
+					<p class="w3-container" style="height:20px; overflow:hidden;">
 						{{photo.description}}<br/>
 					</p>
 				</div>
@@ -36,11 +36,11 @@ MyMedia
 		{% for video in videos %}
 			<div class="row-items">
 				<div class="w3-card">
-					<video controls class="image">
+					<video controls class="w3-image">
 						<source src="{{video.video.url}}"></source>
 					</video>
 					<hr/>
-					<div class="w3-padding w3-container" style="height:20px; overflow:hidden">
+					<div class="w3-container" style="height:20px; overflow:hidden">
 						{{video.description}}
 					</div>
 				</div>
