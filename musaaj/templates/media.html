@@ -36,11 +36,11 @@ MyMedia
 		{% for video in videos %}
 			<div class="row-items">
 				<div class="w3-card">
-					<video controls class="video">
+					<video controls class="image">
 						<source src="{{video.video.url}}"></source>
 					</video>
 					<hr/>
-					<div class="w3-padding">
+					<div class="w3-padding" style="overflow:hidden">
 						{{video.description}}
 					</div>
 				</div>
