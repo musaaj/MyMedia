@@ -1,33 +1,25 @@
 .row{
-	clear:left;
 	padding: 4px 4px 4px 4px;
-	margin: 0px 0px 0px 0px;
+	margin: 0;
 	width: 100%;
 	display: flex;
-	flex-wrap:wrap;
+	flex-wrap: wrap;
+	justify-items: center;
 	justify-content: center;
 }
 .row-items{
-	clear:both;
 	justify-self: center;
 	margin: 8px 8px 8px 8px;
-  max-width:300px;
-	min-height: 300px;
+	max-width:400px;
 }
 .image{
 	width:inherit;
 	display:block;
 	height:200px;
 }
-.audio{
-  width:200px;
-	height:40px;
-}
-.video{
-	height:200px;
-	width:200px;
-}
-@media only screen and (max-width: 600px){
+
+
+@media only screen and (max-width: 768px){
 	.row-items{
 		width:100%;
 	}

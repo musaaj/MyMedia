@@ -1,0 +1,26 @@
+{% extends 'todo_base.html' %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'custom_style.css' %}">
+{% endblock css %}
+
+{% block title %}
+	musaaj | Todo
+{% endblock title %}
+
+
+{% block content %}
+	<section class="container-fluid row">
+		<form class="card shadow p-2 row-items" method="post">
+			<h1 class="p-2">Log in</h1>
+			{% csrf_token %}
+			{% if error %}
+				<p class="color-danger">{{error}}</p>
+			{% endif %}
+			{{form.as_p}}
+			<p class="center">Don't have an account? <a href="#">Register</a></p>
+			<button class="btn btn-primary" type="submit">Log in</button>
+		</form>
+	</section>
+{% endblock content%}

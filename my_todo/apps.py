@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MediaConfig(AppConfig):
+class MyTodoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'musaaj'
+    name = 'my_todo'

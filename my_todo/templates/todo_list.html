@@ -1,0 +1,27 @@
+{% extends 'todo_base.html' %}
+{% load static %}
+
+{% block title %}
+	musaaj | Todo
+{% endblock title %}
+
+{% block content %}
+	<section>
+		<form method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button type="submit">Add</button>
+		</form>
+		<div>
+			{% if not todos %}
+				<p>No todo item yet!</p>
+			{% else %}
+				<ul>
+					{% for todo in todos %}
+					<li>{{todo.title}}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+	</section>
+{% endblock content %}
