@@ -4,7 +4,7 @@ from .models import User
 
 class UserAdmin(BaseUserAdmin):
     fieldsets=(
-            (None, {'fields': ('phone_number', 'first_name', 'last_name')}),
+            (None, {'fields': ('email', 'first_name', 'last_name')}),
             ('Permissions', {'fields': (
                         'is_staff',
                         'is_active',
@@ -20,11 +20,11 @@ class UserAdmin(BaseUserAdmin):
                 None,
                 {
                     'class': ('wide',),
-                    'fields': ('phone_number', 'password1', 'password2')
+                    'fields': ('email', 'password1', 'password2')
                 }
             ),
         )
-    list_display=('phone_number', 'first_name', 'last_name')
+    list_display=('email', 'first_name', 'last_name')
     list_filter=('is_staff', 'is_superuser')
     search_fields = ('first_name', 'last_name',)
     ordering=('first_name',)

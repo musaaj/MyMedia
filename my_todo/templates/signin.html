@@ -12,15 +12,25 @@
 
 {% block content %}
 	<section class="container-fluid row">
-		<form class="card shadow p-2 row-items" method="post">
+		<form class="card shadow d-none d-lg-block d-md-block p-3 row-items" method="post">
 			<h1 class="p-2">Log in</h1>
 			{% csrf_token %}
 			{% if error %}
-				<p class="color-danger">{{error}}</p>
+				<p class="text-danger">{{error}}!</p>
 			{% endif %}
 			{{form.as_p}}
-			<p class="center">Don't have an account? <a href="#">Register</a></p>
-			<button class="btn btn-primary" type="submit">Log in</button>
+			<button class="btn w3-theme-action" type="submit">Log in</button>
+			<p class="p-2">Don't have an account? <a href="{% url 'signup' %}">Register</a></p>
+		</form>
+		<form class="container-fluid clearfix d-md-none d-lg-none d-sm-block" method="post">
+			<h1 class="p-2">Log in</h1>
+			{% csrf_token %}
+			{% if error %}
+				<p class="text-danger">{{error}}!</p>
+			{% endif %}
+			{{form.as_p}}
+			<button class="btn w3-theme-action" type="submit">Log in</button>
+			<p class="p-2">Don't have an account? <a href="{% url 'signup' %}">Register</a></p>
 		</form>
 	</section>
 {% endblock content%}

@@ -1,6 +1,6 @@
 {% extends 'todo_base.html' %}
 {% load static %}
-
+{% load admin_urls %}
 {% block css %}
 	<link rel="stylesheet" href="{% static 'custom_style.css' %}">
 {% endblock css %}
@@ -11,13 +11,22 @@
 
 
 {% block content %}
-	<section class="container-fluid row">
+	<section class="container-fluid mx-4 d-none d-md-block d-md-block row">
 		<form class="card shadow p-2 row-items" method="post">
 			<h1 class="p-2">Register</h1>
 			{% csrf_token %}
 			{{form.as_p}}
-			<p class="center">Already have an account? <a href="#">Sign in</a></p>
-			<button class="btn btn-primary" type="submit">Register</button>
+			<button class="btn w3-theme-action" type="submit">Register</button>
+			<p class="my-3">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+		</form>
+	</section>
+	<section class="container-fluid d-lg-none d-md-none d-sm-block">
+		<form class="form p-2" method="post">
+		 <h1 class="p-2">Register</h1>
+			{% csrf_token %}
+			{{form.as_p}}
+			<button class="btn w3-theme-action" type="submit">Register</button>
+			<p class="my-3">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
 		</form>
 	</section>
 {% endblock content%}
